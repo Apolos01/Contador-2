@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Seis Contadores con Íconos de Dado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .contador-container {
+      margin: 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      background-color: #f9f9f9;
+    }
+    .dado {
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+    .contador {
+      font-size: 50px;
+      margin: 10px 0;
+    }
+    button {
+      font-size: 16px;
+      padding: 6px 12px;
+      margin: 4px;
+      cursor: pointer;
+      border-radius: 6px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .btn-restar {
+      background-color: #f44336;
+    }
+    .btn-restar:hover {
+      background-color: #da190b;
+    }
+    .btn-reiniciar {
+      background-color: #2196F3;
+    }
+    .btn-reiniciar:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Seis Contadores con Íconos de Dado</h1>
+<div id="contadores">
+
+    <div class="contador-container">
+      <div class="dado">⚀</div>
+      <div><strong>Contador 1</strong></div>
+      <div id="contador1" class="contador">0</div>
+      <button onclick="incrementar(1)">+1</button>
+      <button class="btn-restar" onclick="restar(1)">-1</button>
+      <button class="btn-reiniciar" onclick="reiniciar(1)">Reiniciar</button>
+    </div>
+    
+    <div class="contador-container">
+      <div class="dado">⚁</div>
+      <div><strong>Contador 2</strong></div>
+      <div id="contador2" class="contador">0</div>
+      <button onclick="incrementar(2)">+1</button>
+      <button class="btn-restar" onclick="restar(2)">-1</button>
+      <button class="btn-reiniciar" onclick="reiniciar(2)">Reiniciar</button>
+    </div>
+    
+    <div class="contador-container">
+      <div class="dado">⚂</div>
+      <div><strong>Contador 3</strong></div>
+      <div id="contador3" class="contador">0</div>
+      <button onclick="incrementar(3)">+1</button>
+      <button class="btn-restar" onclick="restar(3)">-1</button>
+      <button class="btn-reiniciar" onclick="reiniciar(3)">Reiniciar</button>
+    </div>
+    
+    <div class="contador-container">
+      <div class="dado">⚃</div>
+      <div><strong>Contador 4</strong></div>
+      <div id="contador4" class="contador">0</div>
+      <button onclick="incrementar(4)">+1</button>
+      <button class="btn-restar" onclick="restar(4)">-1</button>
+      <button class="btn-reiniciar" onclick="reiniciar(4)">Reiniciar</button>
+    </div>
+    
+    <div class="contador-container">
+      <div class="dado">⚄</div>
+      <div><strong>Contador 5</strong></div>
+      <div id="contador5" class="contador">0</div>
+      <button onclick="incrementar(5)">+1</button>
+      <button class="btn-restar" onclick="restar(5)">-1</button>
+      <button class="btn-reiniciar" onclick="reiniciar(5)">Reiniciar</button>
+    </div>
+    
+    <div class="contador-container">
+      <div class="dado">⚅</div>
+      <div><strong>Contador 6</strong></div>
+      <div id="contador6" class="contador">0</div>
+      <button onclick="incrementar(6)">+1</button>
+      <button class="btn-restar" onclick="restar(6)">-1</button>
+      <button class="btn-reiniciar" onclick="reiniciar(6)">Reiniciar</button>
+    </div>
+    
+</div>
+
+<script>
+  let numeros = [0, 0, 0, 0, 0, 0, 0];
+
+  function actualizar(id) {
+    document.getElementById('contador' + id).textContent = numeros[id];
+  }
+
+  function incrementar(id) {
+    numeros[id]++;
+    actualizar(id);
+  }
+
+  function restar(id) {
+    numeros[id]--;
+    actualizar(id);
+  }
+
+  function reiniciar(id) {
+    numeros[id] = 0;
+    actualizar(id);
+  }
+</script>
+
+</body>
+</html>
